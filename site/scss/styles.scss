@@ -1,3 +1,21 @@
-html,body {
-  background-color: pink;
+/*@import "normalize";*/
+@import "bourbon";
+@import "neat";
+@import "base/base";
+/*@import "components/*";
+@import "patterns/*";*/
+
+$tablet: '768px';
+$desktop: '1024px';
+
+.container {
+  @include outer-container;
+}
+
+li {
+  @include span-columns(12);
+  @include media($tablet) {
+    @include span-columns(6);
+    @include span-columns(6);
+  }
 }

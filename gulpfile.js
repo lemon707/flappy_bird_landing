@@ -10,6 +10,11 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var bourbon = require('node-bourbon');
+var neat = require('node-neat');
+var livereload = require('gulp-livereload');
 
 // JavaScript linting task
 gulp.task('jshint', function() {
@@ -21,12 +26,18 @@ gulp.task('jshint', function() {
 // Compile Sass task
 gulp.task('sass', function() {
   return gulp.src('site/scss/*.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('site/css'));
+    .pipe(sass({
+      includePaths: bourbon.includePaths,
+      includePaths: neat.includePaths
+    }))
+    .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+    .pipe(gulp.dest('site/css'))
+    .pipe(livereload());
 });
 
 // Watch task
 gulp.task('watch', function() {
+  livereload.listen();
   gulp.watch('site/js/*.js', ['jshint']);
   gulp.watch('site/scss/*.scss', ['sass']);
 });
@@ -54,6 +65,7 @@ gulp.task('styles', function() {
     .pipe(concat('styles.css'))
     .pipe(gulp.dest('build/css'));
 });
+
 
 // Image optimization task
 gulp.task('images', function() {

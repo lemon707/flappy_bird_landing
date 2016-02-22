@@ -1,2 +1,39 @@
-html, body {
-  background-color: pink; }
+/*@import "normalize";*/
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/*@import "components/*";
+@import "patterns/*";*/
+.container {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .container::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+li {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  li:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 768px) {
+    li {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 48.82117%; }
+      li:last-child {
+        margin-right: 0; }
+      li:last-child {
+        margin-right: 0; } }
