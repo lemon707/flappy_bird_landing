@@ -8,14 +8,76 @@
 $tablet: '768px';
 $desktop: '1024px';
 
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html,body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
 .container {
   @include outer-container;
 }
 
-li {
-  @include span-columns(12);
+header h1 {
+  white-space: nowrap;
+}
+
+header, 
+.intro, 
+.call-to-action,
+footer {
+  text-align: center;
+  @include span-columns(6);
+  @include shift(3);
+}
+
+.intro {
+  margin-bottom: 3em;
+}
+
+.features li {
+  text-align: center;
+  @include span-columns(8);
+  @include shift(2);
   @include media($tablet) {
     @include span-columns(6);
     @include span-columns(6);
+    @include shift(0);
   }
+}
+
+.call-to-action a {
+  text-decoration: none;
+  color: #000;
+}
+
+hr {
+  margin-top: 5em;
+  border-top: .1em solid #eaebec;
+}
+
+.icons {
+  list-style-type: none;
+  padding: 0;
+}
+
+.icons > li {
+  display: inline-block;
+  width: 2.5em;
+  height: 2.5em;
+  border: .1em solid #eaebec;
+  border-radius: 1.25em;
+  text-align: center;
+  padding: 0.525em 0;
+  margin: 0 .5em;
 }
