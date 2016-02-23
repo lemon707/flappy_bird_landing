@@ -13,6 +13,8 @@
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css">
         <link rel="stylesheet" type="text/css" href="site/css/styles.css">
+        <script>document.createElement("picture");</script>
+        <script src="site/js/picturefill.min.js" async></script>
     </head>
     <body>
       <div class="container">
@@ -27,11 +29,17 @@
         <section class="features">
             <ul>
                 <li>
-                    <img src="site/img/flappy_bird_screenshot_1.jpg">
-                    <h2>Fly by the pipes!</h2>
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="site/img/flappy_bird_screenshot_1_sm.jpg">
+                        <img alt="flappy bird screenshot 1" src="site/img/flappy_bird_screenshot_1.jpg">
+                    </picture>
+                        <h2>Fly by the pipes!</h2>
                 </li>
                 <li>
-                    <img src="site/img/flappy_bird_screenshot_2.jpg">
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="site/img/flappy_bird_screenshot_2_sm.jpg">
+                        <img alt="flappy bird screenshot 2" src="site/img/flappy_bird_screenshot_2.jpg">
+                    </picture>
                     <h2>Make the bird fly!</h2>
                 </li>
             </ul>
