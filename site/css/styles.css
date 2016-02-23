@@ -8,7 +8,15 @@ html {
 /*@import "components/*";
 @import "patterns/*";*/
 html {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  background: url(../img/flappy_bird_background_sm.png);
+  background-size: contain;
+  background-repeat: no-repeat; }
+  @media screen and (min-width: 1024px) {
+    html {
+      background: url(../img/flappy_bird_background.png);
+      background-repeat: no-repeat;
+      background-size: contain; } }
 
 *, *:before, *:after {
   box-sizing: inherit; }

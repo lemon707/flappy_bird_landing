@@ -10,6 +10,14 @@ $desktop: '1024px';
 
 html {
   box-sizing: border-box;
+  background: url(../img/flappy_bird_background_sm.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  @include media($desktop) {
+    background: url(../img/flappy_bird_background.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 }
 
 *, *:before, *:after {
